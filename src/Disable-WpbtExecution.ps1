@@ -1,6 +1,6 @@
 <#PSScriptInfo
 
-.VERSION 1.0.1
+.VERSION 1.0.2
 
 .GUID a73568ed-d3da-4b81-9522-d29b69b97010
 
@@ -25,7 +25,7 @@
 .EXTERNALSCRIPTDEPENDENCIES
 
 .RELEASENOTES
-Fix typo in parameter.
+Make use of positional parameters.
 
 .PRIVATEDATA
 
@@ -38,7 +38,7 @@ Fix typo in parameter.
 
 #> 
 Param(
-    [Parameter(Mandatory=$true,
+    [Parameter(Mandatory=$true,Position=0,
     HelpMessage="Specify the .wim file to mount")]
     [string] $ImageFile
 )
