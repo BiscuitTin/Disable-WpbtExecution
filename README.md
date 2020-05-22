@@ -1,3 +1,3 @@
-# template
+# Disable-WpbtExecution
 
-Template repository for the Biscuit Tin organization on GitHub.
+Modify an image to disable WPBT execution.
