@@ -1,6 +1,6 @@
 <#PSScriptInfo
 
-.VERSION 1.0.0
+.VERSION 1.0.1
 
 .GUID a73568ed-d3da-4b81-9522-d29b69b97010
 
@@ -25,7 +25,7 @@
 .EXTERNALSCRIPTDEPENDENCIES
 
 .RELEASENOTES
-Add metadata.
+Fix typo in parameter.
 
 .PRIVATEDATA
 
@@ -45,11 +45,11 @@ Param(
 Set-StrictMode -Version Latest
 $ErrorActionPreference = "Stop"
 
-Dism.exe /Get-ImageInfo /ImageFile:"$imageFile"
+Dism.exe /Get-ImageInfo /ImageFile:"$ImageFile"
 [int] $index = Read-Host "Specify the index of the image on which to perform the disable operation"
 
 $mountDir = New-Item -Name "$(New-Guid)" -Path $([System.IO.Path]::GetTempPath()) -ItemType Directory
-Dism.exe /Mount-Image /ImageFile:"$imageFile" /Index:"$index" /MountDir:"$mountDir" /Optimize /CheckIntegrity
+Dism.exe /Mount-Image /ImageFile:"$ImageFile" /Index:"$index" /MountDir:"$mountDir" /Optimize /CheckIntegrity
 
 reg.exe LOAD "HKLM\IMAGE" "$mountDir\Windows\System32\config\SYSTEM"
 reg.exe ADD "HKLM\IMAGE\ControlSet001\Control\Session Manager" /v "DisableWpbtExecution" /t REG_DWORD /d 1 /f

@@ -6,5 +6,5 @@ Modify an image to disable WPBT execution.
 
 ```powershell
 Install-Script -Name Disable-WpbtExecution
-Disable-WpbtExecution.ps1 -imageFile "D:\sources\install.wim"
+Disable-WpbtExecution.ps1 -ImageFile "D:\sources\install.wim"
 ```
